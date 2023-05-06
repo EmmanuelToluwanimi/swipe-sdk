@@ -1,4 +1,4 @@
-import { IPagination, IReference } from "../interface/index";
+import { IFetcher, IPagination, IReference } from "../interface/index";
 
 export const baseUrl = "https://swipetelecom.com.ng/api/public";
 
@@ -25,12 +25,30 @@ export const ROUTES = {
   },
   transaction: {
     all: {
-      url: (params: IPagination) => { return baseUrl + "/transaction/buy" },
+      url: baseUrl + "/transaction",
       method: "GET",
     },
     reference: {
-      url: (reference: IReference, params: IPagination) => { return baseUrl + "/transaction/reference/" + reference },
+      url: (reference: string) => { return baseUrl + "/transaction/reference/" + reference },
       method: "GET",
     }
   }
+}
+
+export async function Fetcher({
+  url,
+  method,
+  apiKey,
+  body,
+  pagination,
+}: IFetcher) {
+  let _url = pagination ? `${url}/?limit=${pagination.limit}&offset=${pagination.offset}` : url;
+  return await fetch(_url, {
+    method,
+    ...(body && { body: JSON.stringify(body) }),
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-type": "application/json; charset=UTF-8",
+    }
+  });
 }
