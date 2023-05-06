@@ -1,0 +1,1 @@
+export const baseUrl = "https://swipetelecom.com.ng/api/public";
