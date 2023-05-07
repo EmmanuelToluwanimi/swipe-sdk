@@ -66,8 +66,8 @@ The Buy Data Plan method calls the endpoint to get buy or subscibe to available 
 const payload = {
     mobile_number: string, // the mobile number you desire to subscribe to.
     reference:     string, // the field is optional, if not passed it will be auto-created.
-    plan:          string, // the plan to subscribe to.
-    network:       number, // the network to subscribe to.
+    plan:          string, // the plan ID to subscribe to e.g "252".
+    network:       number, // the network ID to subscribe to e.g 1.
     ported_number: boolean // whether the phone number is a ported number.
 }
 
