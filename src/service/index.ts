@@ -20,7 +20,7 @@ export class SwipeSdk {
         this.apiKey = apiKey;
     }
 
-    async getUserDetails(): Promise<IUserDetailsResponse | IErrorResponse> {
+    async getUserDetails(): Promise<IUserDetailsResponse> {
         try {
             const res = await Fetcher({
                 apiKey: this.apiKey,
@@ -30,11 +30,11 @@ export class SwipeSdk {
             const response: IUserDetailsResponse = await res.json();
             return response;
         } catch (error: any) {
-            throw error as IErrorResponse
+            throw error
         }
     }
 
-    async updateWebhookUrl(params: IUpdateWebhookPayload): Promise<IUpdateWebhookResponse | IErrorResponse> {
+    async updateWebhookUrl(params: IUpdateWebhookPayload): Promise<IUpdateWebhookResponse> {
         try {
             const res = await Fetcher({
                 apiKey: this.apiKey,
@@ -49,7 +49,7 @@ export class SwipeSdk {
         }
     }
 
-    async getDataPlans(): Promise<IGetDataPlansResponse | IErrorResponse> {
+    async getDataPlans(): Promise<IGetDataPlansResponse> {
         try {
             const res = await Fetcher({
                 apiKey: this.apiKey,
@@ -63,7 +63,7 @@ export class SwipeSdk {
         }
     }
 
-    async buyDataPlan(params: IBuyDataPayload): Promise<IBuyDataResponse | IErrorResponse> {
+    async buyDataPlan(params: IBuyDataPayload): Promise<IBuyDataResponse> {
         try {
             const res = await Fetcher({
                 apiKey: this.apiKey,
@@ -78,7 +78,7 @@ export class SwipeSdk {
         }
     }
 
-    async getAllDataTransactions(pagination: IPagination): Promise<IGetAllTransactionsResponse | IErrorResponse> {
+    async getAllDataTransactions(pagination: IPagination): Promise<IGetAllTransactionsResponse> {
         try {
             const res = await Fetcher({
                 apiKey: this.apiKey,
@@ -93,7 +93,7 @@ export class SwipeSdk {
         }
     }
 
-    async getDataTransactionByReference(reference: string): Promise<IUpdateWebhookResponse | IErrorResponse> {
+    async getDataTransactionByReference(reference: string): Promise<IUpdateWebhookResponse> {
         try {
             const res = await Fetcher({
                 apiKey: this.apiKey,
