@@ -1,0 +1,31 @@
+{
+  "name": "swipe-sdk",
+  "version": "1.0.0",
+  "description": "This project is an sdk built for Swipe-Telecoms API",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmanuelToluwanimi/swipe-sdk.git"
+  },
+  "keywords": [
+    "swipe-sdk",
+    "swipe-telecoms",
+    "swipe-api",
+    "sdk",
+    "api"
+  ],
+  "author": "Amusan T. Emmanuel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EmmanuelToluwanimi/swipe-sdk/issues"
+  },
+  "homepage": "https://github.com/EmmanuelToluwanimi/swipe-sdk#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
