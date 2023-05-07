@@ -30,7 +30,7 @@ export class SwipeSdk {
             const response: IUserDetailsResponse = await res.json();
             return response;
         } catch (error: any) {
-            return error as IErrorResponse
+            throw error as IErrorResponse
         }
     }
 
@@ -45,7 +45,7 @@ export class SwipeSdk {
             const response: IUpdateWebhookResponse = await res.json();
             return response;
         } catch (error: any) {
-            return error as IErrorResponse
+            throw error as IErrorResponse
         }
     }
 
@@ -59,7 +59,7 @@ export class SwipeSdk {
             const response: IGetDataPlansResponse = await res.json();
             return response;
         } catch (error: any) {
-            return error as IErrorResponse
+            throw error as IErrorResponse
         }
     }
 
@@ -74,7 +74,7 @@ export class SwipeSdk {
             const response: IBuyDataResponse = await res.json();
             return response;
         } catch (error: any) {
-            return error as IErrorResponse
+            throw error as IErrorResponse
         }
     }
 
@@ -89,7 +89,7 @@ export class SwipeSdk {
             const response: IGetAllTransactionsResponse = await res.json();
             return response;
         } catch (error: any) {
-            return error as IErrorResponse
+            throw error as IErrorResponse
         }
     }
 
@@ -103,7 +103,7 @@ export class SwipeSdk {
             const response: IUpdateWebhookResponse = await res.json();
             return response;
         } catch (error: any) {
-            return error as IErrorResponse
+            throw error as IErrorResponse
         }
     }
 
